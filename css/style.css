@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    text-transform: uppercase;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    color: #ffff;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "head menu menu menu"
+    "hero hero hero hero"
+    "main main - image"
+    "main main - extra"
+    "ban ban ban ban";
+    grid-template-rows: 100px 400px 200px 200px 200px;
+}
+
+.header {
+    background-color: rgb(29, 156, 67);
+    grid-area: head;
+
+}
+.menu {
+    background-color: aqua;
+    grid-area: menu;
+}
+
+.container > * {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.hero {
+    background-color:bisque;
+    grid-area: hero;
+}
+
+.main {
+    background-color: slategrey;
+    grid-area: main;
+}
+
+.banner {
+    background-color: indianred;
+    grid-area: ban;
+}
+
+.extra {
+    background-color: plum;
+    grid-area: extra;
+}
+
+.image {
+    background-color: navajowhite;
+    grid-area: image;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100px 600px 250px 250px 250px;
+        grid-template-areas: 
+        "head head head"
+        "hero hero hero"
+        "menu main main"
+        "menu ban ban"
+        "menu extra image"
+        ;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "head"
+        "menu"
+        "hero"
+        "main"
+        "ban"
+        "extra"
+        "img"
+        ;
+        grid-template-rows: 75px 75px 150px 150px 100px 100px 100px;
+    }
+}
